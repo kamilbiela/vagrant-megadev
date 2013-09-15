@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # install ubuntu 13.04
   config.vm.box = "ubuntu-raring"
-  config.vm.box_url = "http://cloud-images.ubuntu-raringtu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
   
   config.vm.hostname = 'mega.dev'
   config.vm.network :private_network, ip: '192.168.66.6'
