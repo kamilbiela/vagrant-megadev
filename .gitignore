@@ -1,0 +1,8 @@
+/*.dmg
+/remote_file
+/chef-client-running.pid
+/chef-stacktrace.out
+/homebrew_go
+/.vagrant
+/logs/
+/.vagrantuser

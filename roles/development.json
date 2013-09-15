@@ -1,0 +1,23 @@
+{
+  "name": "development",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[git]",
+    "recipe[php]",
+    "recipe[composer]",
+    "recipe[node]",
+    "recipe[mysql::server]",
+    "recipe[apache2]",
+    "recipe[apache2::mod_php5]",
+    "recipe[apache2::mod_rewrite]",
+    "recipe[main]"		
+  ],
+  "env_run_lists": {
+  }
+}
