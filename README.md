@@ -49,7 +49,7 @@ This will update /etc/hosts file on Your computer
 Edit ``.vagrantuser`` file
 
 ```sh
-vagrant up
+vagrant reload
 vagrant provision
 vagrant hostmanager
 ```

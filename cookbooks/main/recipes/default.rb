@@ -8,6 +8,10 @@ package "fish" do
   action :install
 end
 
+package "ruby-dev" do 
+  action :install
+end 
+
 # install php packages
 # ====================
 
@@ -54,9 +58,23 @@ node_npm "coffee-script" do
     action :install
 end
 
+# install gem packages
+# ====================
+
+gem_package "jekyll" do
+  action :install # see actions section below
+end
+
+gem_package "kramdown" do
+  action :install # see actions section below
+end
+
+# configure sites from .vagrantuser file
+# ======================================
 node['user_projects'].each do |entry|
   web_app entry["host"] do
     server_name entry["host"]
     docroot "/var/www/" + entry["host"] + entry["web_dir"]
+    notifies :restart, "service[apache2]"
   end
 end
