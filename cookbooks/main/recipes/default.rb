@@ -1,73 +1,46 @@
 include_recipe "apache2"
 
-package "mc" do
-  action :install
+# Apt packages
+# ==============
+
+packages_list = %w(
+  mc fish ruby-dev
+  php5-memcache php5-gd php5-curl php5-mysql php5-xdebug php5-xsl php5-imagick php5-sqlite php5-sqlite
+)
+
+packages_list.each do |name| 
+  package name do 
+    action :install
+  end
 end
 
-package "fish" do
-  action :install
-end
 
-package "ruby-dev" do 
-  action :install
+# Node packages
+# ===============
+
+node_packages_list = %w(
+  bower coffee-script
+)
+
+node_packages_list.each do |name| 
+  node_npm name do 
+    action :install
+  end
 end 
 
-# install php packages
-# ====================
+# Gem packages
+# ==============
 
-package "php5-memcache" do
-  action :install
-end
+gem_packages_list = %w(
+  jekyll kramdown
+) 
 
-package "php5-gd" do
-  action :install
-end
-
-package "php5-curl" do
-  action :install
-end
-
-package "php5-mysql" do
-  action :install
-end
-
-package "php5-xdebug" do
-  action :install
-end
-
-package "php5-xsl" do
-  action :install
-end
-
-package "php5-imagick" do
-  action :install
-end
-
-package "php5-sqlite" do
-  action :install
-end
-
-# install node packages
-# =====================
-
-node_npm "bower" do
+gem_packages_list.each do |name| 
+  gem_package name do 
     action :install
+  end
 end
 
-node_npm "coffee-script" do
-    action :install
-end
-
-# install gem packages
-# ====================
-
-gem_package "jekyll" do
-  action :install # see actions section below
-end
-
-gem_package "kramdown" do
-  action :install # see actions section below
-end
 
 # configure sites from .vagrantuser file
 # ======================================
