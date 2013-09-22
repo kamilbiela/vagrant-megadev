@@ -17,7 +17,6 @@ end
 
 # Node packages
 # ===============
-
 node_packages_list = %w(
   bower coffee-script
 )
@@ -27,7 +26,6 @@ node_packages_list.each do |name|
     action :install
   end
 end 
-
 # Gem packages
 # ==============
 
@@ -41,6 +39,11 @@ gem_packages_list.each do |name|
   end
 end
 
+template "/etc/php5/mods-available/xdebug.ini" do
+  mode 0644
+  owner "root"
+  group "root"
+end
 
 # configure sites from .vagrantuser file
 # ======================================
