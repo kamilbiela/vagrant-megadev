@@ -54,6 +54,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       "node" => {
         "revision" => 'v0.11.7'
       },
+      "mongodb" => {
+        "logpath" => "/vagrant/logs/mongodb"
+      },    
       "user_projects" => config.user.projects
     }
   end

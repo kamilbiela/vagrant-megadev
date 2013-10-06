@@ -40,3 +40,6 @@
 [submodule "cookbooks/xml"]
 	path = cookbooks/xml
 	url = https://github.com/opscode-cookbooks/xml
+[submodule "cookbooks/mongodb"]
+	path = cookbooks/mongodb
+	url = git@github.com:edelight/chef-mongodb.git

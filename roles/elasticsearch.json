@@ -1,6 +1,6 @@
 {
-  "name": "development",
-  "description": "",
+  "name": "elasticsearch",
+  "description": "install elasticsearch",
   "json_class": "Chef::Role",
   "default_attributes": {
   },
@@ -9,11 +9,6 @@
   "chef_type": "role",
   "run_list": [
     "recipe[git]",
-    "recipe[php]",
-    "recipe[composer]",
-    "recipe[node]",
-    "recipe[mysql::server]",
-    "recipe[mongo]"
     "recipe[main]"
   ],
   "env_run_lists": {

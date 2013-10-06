@@ -1,6 +1,6 @@
 {
-  "name": "development",
-  "description": "",
+  "name": "php",
+  "description": "for developing php applications",
   "json_class": "Chef::Role",
   "default_attributes": {
   },
@@ -11,10 +11,11 @@
     "recipe[git]",
     "recipe[php]",
     "recipe[composer]",
-    "recipe[node]",
     "recipe[mysql::server]",
-    "recipe[mongo]"
-    "recipe[main]"
+    "recipe[apache2]",
+    "recipe[apache2::mod_php5]",
+    "recipe[apache2::mod_rewrite]",
+    "recipe[main::php]"
   ],
   "env_run_lists": {
   }
